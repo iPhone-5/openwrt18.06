@@ -63,7 +63,7 @@ jobs:
            git clone  https://github.com/Sweet-Fairy/luci-app-ssr-plus-Jo
            git clone  https://github.com/Sweet-Fairy/openwrt-package
            git clone -b lean  https://github.com/Sweet-Fairy/luci-app-ssr-plus-Jo package/luci-app-ssr-plus-lean    
-           git clone  https://github.com/Leo-Jo/luci-app-vssr-plus
+           git clone  https://github.com/Leo-Jo/luci-app-vssr
            git clone  https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
            git clone  https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman  
            # ==========ssr-plus-Jo   ssr-plus-lean不要一起编译  +vssr   ==========
@@ -117,9 +117,9 @@ jobs:
           #  CONFIG_TARGET_IMAGES_GZIP=y
           #  EOF
           # 编译UEFI固件:
-          # cat >> .config <<EOF
-          # CONFIG_EFI_IMAGES=y
-          # EOF
+            cat >> .config <<EOF
+            CONFIG_EFI_IMAGES=y
+            EOF
           # IPv6支持:
             cat >> .config <<EOF
             CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
@@ -187,17 +187,17 @@ jobs:
             CONFIG_PACKAGE_luci-app-qosv4=y
             CONFIG_PACKAGE_luci-app-samba=y
             CONFIG_PACKAGE_luci-app-smartdns=y
-            CONFIG_PACKAGE_kmod-tcp-bbr-mod=y
+          # CONFIG_PACKAGE_kmod-tcp-bbr-mod=y
             CONFIG_PACKAGE_kmod-tcp-bbr-nanqinlang=y
             CONFIG_PACKAGE_luci-app-passwall=y 
-            CONFIG_PACKAGE_luci-app-vssr-plus=y
+            CONFIG_PACKAGE_luci-app-vssr=y
           # CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
             CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
             CONFIG_PACKAGE_luci-app-advanced-reboot=y
             CONFIG_PACKAGE_luci-app-amule=y
             CONFIG_PACKAGE_luci-app-appfilter=y
             CONFIG_PACKAGE_luci-app-adblock=y
-            CONFIG_PACKAGE_luci-app-cd8021x=y
+          # CONFIG_PACKAGE_luci-app-cd8021x=y
             CONFIG_PACKAGE_luci-app-chinadns=y
             CONFIG_PACKAGE_luci-app-cifs=y
             CONFIG_PACKAGE_luci-app-cifsd=y
@@ -213,15 +213,15 @@ jobs:
             CONFIG_PACKAGE_luci-app-filebrowser=y
             CONFIG_PACKAGE_luci-app-fileassistant=y
             CONFIG_PACKAGE_luci-app-haproxy-tcp=y
-            CONFIG_PACKAGE_luci-app-mentohust=y
+          # CONFIG_PACKAGE_luci-app-mentohust=y
             CONFIG_PACKAGE_luci-app-mjpg-streamer=y
-            CONFIG_PACKAGE_luci-app-n2n_v2=y
+          # CONFIG_PACKAGE_luci-app-n2n_v2=y
             CONFIG_PACKAGE_luci-app-nfs=y
-            CONFIG_PACKAGE_luci-app-ocserv=y
-            CONFIG_PACKAGE_luci-app-oscam=y
-            CONFIG_PACKAGE_luci-app-samba4=y
+          # CONFIG_PACKAGE_luci-app-ocserv=y
+          # CONFIG_PACKAGE_luci-app-oscam=y
+          # CONFIG_PACKAGE_luci-app-samba4=y
             CONFIG_PACKAGE_luci-app-softethervpn5=y
-            CONFIG_PACKAGE_luci-app-speederv2=y
+          # CONFIG_PACKAGE_luci-app-speederv2=y
             CONFIG_PACKAGE_luci-app-ssr-libev-server=y
             CONFIG_PACKAGE_luci-app-ssr-python-pro-server=y
             CONFIG_PACKAGE_luci-app-transmission=y
@@ -289,3 +289,4 @@ jobs:
           path: ./bin/packages/
           
      
+
